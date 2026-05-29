@@ -3,8 +3,8 @@ import { Smile, Star, ShieldCheck, Heart, Sparkles, Award, ArrowRight, MapPin, P
 import { ActiveView } from '../types';
 import { DOCTORS, SERVICES, REVIEWS, OFFICE_GALLERY_IMAGES, LOCATIONS } from '../data';
 import { useState } from 'react';
-const heroImg = '/src/assets/images/hero_happy_smiling_child_1780073015351.png';
-const pediatricHygieneImg = '/src/assets/images/pediatric_dental_hygiene_1780073040923.png';
+const heroImg = 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=600&h=600';
+const pediatricHygieneImg = 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=600&h=450';
 
 interface HomeViewProps {
   onNavigate: (view: ActiveView) => void;
@@ -364,10 +364,10 @@ export default function HomeView({ onNavigate, onOpenBooking }: HomeViewProps) {
           {DOCTORS.slice(0, 4).map((doc) => (
             <div
               key={doc.id}
-              className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all text-center flex flex-col justify-between group"
+              className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all text-center flex flex-col justify-between group p-6 min-h-[410px]"
             >
-              <div className="p-5 space-y-4">
-                <div className="w-36 h-36 rounded-full overflow-hidden mx-auto border-4 border-[#8EE3CF]/20 relative">
+              <div className="flex flex-col items-center space-y-4 flex-1">
+                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#8EE3CF]/20 relative flex items-center justify-center shrink-0">
                   <img
                     src={doc.image}
                     alt={doc.name}
@@ -375,14 +375,22 @@ export default function HomeView({ onNavigate, onOpenBooking }: HomeViewProps) {
                     referrerPolicy="no-referrer"
                   />
                 </div>
-                <div>
-                  <h3 className="font-extrabold text-slate-800 text-lg leading-tight">{doc.name}</h3>
-                  <span className="text-xs font-semibold text-[#5BBEF7] mt-1 block">{doc.title}</span>
+                <div className="w-full">
+                  <h3 className="font-extrabold text-slate-800 text-base leading-tight min-h-[40px] flex items-center justify-center px-1">
+                    {doc.name}
+                  </h3>
+                  <div className="min-h-[22px] flex items-center justify-center mt-1">
+                    <span className="text-[11px] font-semibold text-[#5BBEF7] bg-[#5BBEF7]/5 px-2.5 py-0.5 rounded-full inline-block">
+                      {doc.title}
+                    </span>
+                  </div>
                 </div>
-                <p className="text-slate-500 text-xs leading-relaxed line-clamp-3">{doc.bio}</p>
+                <p className="text-slate-500 text-xs leading-relaxed line-clamp-3 h-12 overflow-hidden w-full">
+                  {doc.bio}
+                </p>
               </div>
-              <div className="bg-slate-50 p-4 border-t border-slate-100/50 flex flex-col justify-between items-center text-xs">
-                <span className="text-slate-400 font-bold text-[10px] uppercase">Favorite Toy</span>
+              <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100/50 flex flex-col justify-between items-center text-xs mt-4 shrink-0">
+                <span className="text-slate-400 font-bold text-[9px] uppercase tracking-wider">Favorite Toy Partner</span>
                 <span className="font-extrabold text-slate-600 mt-1 block">🧸 {doc.favoriteToy}</span>
               </div>
             </div>

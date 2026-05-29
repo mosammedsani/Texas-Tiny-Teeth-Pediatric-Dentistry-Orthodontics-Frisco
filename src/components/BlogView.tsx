@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BookOpen, Search, User, Calendar, Clock, ArrowRight, Star, Heart, Check, Smile } from 'lucide-react';
-const infantFirstDentalHomeImg = '/src/assets/images/infant_first_dental_home_1780073096648.png';
+
+const infantFirstDentalHomeImg = 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=600&h=400';
 
 interface BlogViewProps {
   onOpenBooking: () => void;

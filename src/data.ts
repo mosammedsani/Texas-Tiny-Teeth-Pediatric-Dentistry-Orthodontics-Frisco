@@ -1,5 +1,6 @@
 import { Doctor, ClinicLocation, ServiceDetail, Review } from './types';
-const drSarahCroftImg = '/src/assets/images/dr_sarah_croft_1780073064043.png';
+
+const drSarahCroftImg = 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600&h=600';
 
 export const DOCTORS: Doctor[] = [
   {

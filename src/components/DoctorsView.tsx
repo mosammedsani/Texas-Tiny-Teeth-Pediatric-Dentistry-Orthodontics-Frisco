@@ -39,46 +39,46 @@ export default function DoctorsView({ onOpenBooking }: DoctorsViewProps) {
           {DOCTORS.map((doc) => (
             <div
               key={doc.id}
-              className="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group p-6 h-full"
+              className="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group p-6 h-full min-h-[440px]"
               id={`doctor-card-${doc.id}`}
             >
-              <div className="space-y-4">
+              <div className="flex flex-col items-center text-center space-y-4 flex-1">
                 
                 {/* Rounded Portrait Frame */}
-                <div className="flex flex-col items-center">
-                  <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#8EE3CF]/30 shadow-md group-hover:scale-103 transition duration-300 bg-slate-50 shrink-0 relative">
-                    <img
-                      src={doc.image}
-                      alt={doc.name}
-                      className="w-full h-full object-cover select-none"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
+                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#8EE3CF]/30 shadow-md group-hover:scale-105 transition duration-300 bg-slate-50 shrink-0 relative flex items-center justify-center">
+                  <img
+                    src={doc.image}
+                    alt={doc.name}
+                    className="w-full h-full object-cover select-none"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
 
                 {/* Info Text block */}
-                <div className="text-center space-y-2">
-                  <h3 className="text-lg font-black font-sans text-slate-800 leading-tight group-hover:text-[#5BBEF7] transition-colors">
+                <div className="space-y-1.5 w-full">
+                  <h3 className="text-lg font-black font-sans text-slate-800 leading-tight group-hover:text-[#5BBEF7] transition-colors min-h-[44px] flex items-center justify-center px-1">
                     {doc.name}
                   </h3>
-                  <span className="text-xs font-bold text-[#5BBEF7] bg-[#5BBEF7]/5 px-2.5 py-0.5 rounded-full inline-block">
-                    {doc.title}
-                  </span>
+                  <div className="min-h-[26px] flex items-center justify-center">
+                    <span className="text-[11px] font-bold text-[#5BBEF7] bg-[#5BBEF7]/5 px-2.5 py-0.5 rounded-full inline-block">
+                      {doc.title}
+                    </span>
+                  </div>
                   <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest block">
                     Certified Specialist
                   </p>
                 </div>
 
-                <p className="text-slate-500 text-xs leading-relaxed text-center line-clamp-3">
+                <p className="text-slate-500 text-xs leading-relaxed text-center line-clamp-3 h-12 overflow-hidden w-full">
                   {doc.bio}
                 </p>
 
                 {/* Specialties Summary */}
-                <div className="flex flex-wrap gap-1 justify-center pt-1">
+                <div className="flex flex-wrap gap-1 justify-center pt-1 min-h-[24px]">
                   {doc.specialties.slice(0, 2).map((spec, sIdx) => (
                     <span
                       key={sIdx}
-                      className="bg-[#8EE3CF]/10 text-slate-700 text-[10px] font-bold px-2 py-0.5 rounded-md"
+                      className="bg-[#8EE3CF]/10 text-slate-700 text-[10px] font-bold px-2 py-0.5 rounded-md inline-block"
                     >
                       ✨ {spec}
                     </span>
@@ -88,7 +88,7 @@ export default function DoctorsView({ onOpenBooking }: DoctorsViewProps) {
               </div>
 
               {/* Action Bottom segment */}
-              <div className="pt-6 border-t border-slate-100 mt-6 space-y-4">
+              <div className="pt-4 border-t border-slate-100 mt-5 space-y-3 shrink-0">
                 <div className="flex items-center justify-between text-[11px] text-slate-400 font-bold uppercase tracking-wider">
                   <span>⭐ 5.0 Rating</span>
                   <span>🧸 {doc.favoriteToy.split(' ').slice(-1)[0]}</span>
@@ -143,7 +143,7 @@ export default function DoctorsView({ onOpenBooking }: DoctorsViewProps) {
                 
                 {/* Header segment with layout of picture and title */}
                 <div className="flex flex-col sm:flex-row items-center gap-6 pb-6 border-b border-slate-100">
-                  <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-[#8EE3CF]/30 shadow-md shrink-0 bg-slate-50">
+                  <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-[#8EE3CF]/30 shadow-md shrink-0 bg-slate-50 flex items-center justify-center">
                     <img
                       src={selectedDoc.image}
                       alt={selectedDoc.name}
@@ -170,7 +170,7 @@ export default function DoctorsView({ onOpenBooking }: DoctorsViewProps) {
                   <h4 className="text-xs font-black text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
                     <Smile className="w-4 h-4 text-[#5BBEF7]" /> Our Practice Story & Biography
                   </h4>
-                  <p className="text-slate-6 * text-sm sm:text-base leading-relaxed text-slate-600">
+                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                     {selectedDoc.bio}
                   </p>
                 </div>
