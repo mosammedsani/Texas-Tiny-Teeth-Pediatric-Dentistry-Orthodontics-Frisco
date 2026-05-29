@@ -1,0 +1,6 @@
+{
+  "name": "Texas Tiny Teeth",
+  "description": "A premium, playful, modern, and highly engaging pediatric dental website designed for North Texas children and parents.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
